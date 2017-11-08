@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README: This is my first repo on github. I started it with the help of Careerfoundry. I do their Web Developer Course at the moment. 
 
 Things you may want to cover:
 
