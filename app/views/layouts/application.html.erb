@@ -27,16 +27,23 @@
 
     <div class="navbar-collapse collapse">
 
-     <ul class="nav pull-right log">
-      
-      </ul>
+     
       <ul class="nav navbar-nav navbar-left">
         <li><a href="http://buxteben.herokuapp.com/" class="active">HOME</a></li>
         <li><a href="/products">PRODUCTS</a></li>
         <li><a href="/orders">ORDERS</a></li>
         <li><a href="/simple_pages/about">ABOUT ME</a></li>
         <li><a href="/simple_pages/contact">CONTACT</a></li>
+        <li style="margin: 0.8em 0 0 17em;">
+                <%= form_tag("/products", method: "get") do %>
+                  <%= label_tag(:q, "Search:") %>
+                  <%= text_field_tag(:q, nil, class: 'black') %>
+                  <%= submit_tag("Search", class: 'glyphicon glyphicon-search') %>
+                <% end %>
+              </li>
       </ul>
+      
+
 
       
     </div><!-- nav -->

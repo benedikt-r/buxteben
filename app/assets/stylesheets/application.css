@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+div.btn.btn-danger {
+  color: white;
+}
+div.btn.btn-danger input {
+  background-color: transparent;
+  border: none;
+}
+.text-center a {
+  color: black;
+  font-size: 1em;
+}

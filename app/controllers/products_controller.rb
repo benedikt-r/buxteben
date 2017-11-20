@@ -4,8 +4,18 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-  @products = Product.limit(4)
-end
+   if Rails.env.development? 
+      name_env = "name LIKE ?"
+   else
+      name_env = "name ilike ?"
+  end 
+   if params[:q]
+      search_term = params[:q]
+      @products = Product.search(search_term)
+   else
+      @products = Product.all
+   end
+  end
 
   # GET /products/1
   # GET /products/1.json

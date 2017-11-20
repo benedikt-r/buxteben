@@ -27,16 +27,33 @@
   </div>
   <div class="field">
   <%= form.label :color %>
-  <%= form.text_field :color %>
+  <%= form.text_field :color, id: :product_color %>
 </div>
 <div class="field">
   <%= form.label :price %>
-  <%= form.text_field :price %>
+  <%= form.text_field :price, id: :product_price %>
 </div>
 
+<div class="field">
+  <label for="name">Name</label>
+  <input id="product_name" type="text" name="name">
+</div>
+
+<div class="field">
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</div>
+
+
   <div class="actions">
-    <%= form.submit %>
+<%= form_with(model: product, local: true) do |form| %>
   </div>
 
-  
+  <div class="field">
+  <%= form.label :description %><br>
+  <%= form.text_area :description %>
+</div>
+  <div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>
