@@ -37,7 +37,7 @@
         <li style="margin: 0.8em 0 0 17em;">
                 <%= form_tag("/products", method: "get") do %>
                   <%= label_tag(:q, "Search:") %>
-                  <%= text_field_tag(:q, nil, class: 'black') %>
+                  <%= text_field_tag(:q, nil, class: 'black', placeholder: "Search here") %>
                   <%= submit_tag("Search", class: 'btn btn-danger') %>
                 <% end %>
               </li>

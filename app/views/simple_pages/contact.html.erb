@@ -1,10 +1,30 @@
 <h1>Contact me</h1>
-<p>See my Contact Details:
-	<ul>
-		<li>Phone: 0000/123456</li>
-		<li>email: 12345@benbuxte.de</li>
-		<li>skype: example.example</li>
-	</ul>
+
+	<%= flash[:notice] %>
+
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+      </div>        
+      <div class="form-group">
+        <%= form.label :email, "Email Address" %>
+        <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :message %>
+        <%= form.text_area :message, class: "form-control", placeholder: "Enter Message" %>
+              
+      </div> 
+      <%= form.submit "Send", class:"btn btn-primary send-button" %>     
+   
+
+      <% end %>  
+    </div>
+
+  </div>
+   
 	<%= image_tag("bike0.jpg",class: "img-responsive")  %>
 
-</p>
+
