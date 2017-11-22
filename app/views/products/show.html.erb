@@ -14,14 +14,13 @@
   <strong>Price:</strong>
   <%= @product.price %> €
 </p>
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
-</p>
       <p id="prod-description"><%= @product.description %></p>
 
-   
-      
+ <% if @product.highest_rating_comment %> 
+    <p> <%= @product.highest_rating_comment.body %>
+<% end %>
+</p> 
+     
   
     </div>
   </div>
