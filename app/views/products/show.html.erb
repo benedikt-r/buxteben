@@ -18,12 +18,16 @@
 
  <% if @product.highest_rating_comment %> 
     <p> <%= @product.highest_rating_comment.body %>
+
 <% end %>
 </p> 
-     
   
     </div>
   </div>
+  <%= render 'new_comment' %>
+    <%= render "comments" %>
+
+
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
