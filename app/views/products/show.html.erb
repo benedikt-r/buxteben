@@ -14,21 +14,27 @@
   <strong>Price:</strong>
   <%= @product.price %> €
 </p>
-      <p id="prod-description"><%= @product.description %></p>
+
 
  <% if @product.highest_rating_comment %> 
-    <p> <%= @product.highest_rating_comment.body %>
+    <p> "<%= @product.highest_rating_comment.body %>"</p> 
+      <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+      <p id="prod-description"><%= @product.description %></p>
 
 <% end %>
-</p> 
+
+ 
+      
   
     </div>
+
   </div>
   <%= render 'new_comment' %>
     <%= render "comments" %>
 
 
 </div>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
