@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
 	has_many :orders
 	has_many :comments
+  validates :name,:description, :image_url,:price,:color, presence: true
+ 
 
   def average_rating
   comments.average(:rating).to_f
