@@ -35,7 +35,7 @@
         <li><a href="/simple_pages/about">ABOUT ME</a></li>
         <li><a href="/simple_pages/contact">CONTACT</a></li>
         <li style="margin: 0.8em 0 0 17em;">
-                <%= form_tag("/products", method: "get") do %>
+                <%= form_tag( products_path, method: "get") do %>
                   <%= label_tag(:q, "Search:") %>
                   <%= text_field_tag(:q, nil, class: 'black', placeholder: "Search here") %>
                   <%= submit_tag("Search", class: 'btn btn-danger') %>
