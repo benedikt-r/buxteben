@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   post 'simple_pages/thank_you'
 
   root 'simple_pages#landing_page'
+
+  post 'payments/create'
+  
+  get 'payments/create'
   
   resources :orders, only: [:index, :show, :create, :destroy]
   
