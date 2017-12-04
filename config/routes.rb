@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   
   get 'payments/create'
   
+
   resources :orders, only: [:index, :show, :create, :destroy]
   
 end

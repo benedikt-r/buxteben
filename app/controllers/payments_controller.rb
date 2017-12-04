@@ -21,7 +21,6 @@ def create
   end
 
 
-
   rescue Stripe::CardError => e
 
     # The card has been declined
