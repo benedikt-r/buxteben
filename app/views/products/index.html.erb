@@ -4,7 +4,7 @@
   
   <div class="container-fluid page_wrap">
   <div class="row">
-    <% cache @products do %>
+    <% cache(cache_key_for_products) do %>
       <%= render @products %>
     <% end %>
   </div>
