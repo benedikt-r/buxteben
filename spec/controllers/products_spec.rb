@@ -14,6 +14,7 @@ describe ProductsController, type: :controller do
     context 'POST #create' do
     it 'is an invalid product' do
     @product = FactoryBot.build(:product, name: "")
+    post :create, params: { id: @product.id, product: @create}
     expect(@product).not_to be_valid
     end
   end
@@ -21,7 +22,7 @@ describe ProductsController, type: :controller do
   context 'GET #show' do
     it 'renders the show page' do
       product = FactoryBot.create(:product)
-      get :show, id: product.id
+      get :show, params:{} product.id}
       expect(response).to be_ok
       expect(response).to render_template('show')
     end
@@ -35,7 +36,7 @@ describe ProductsController, type: :controller do
 
     it "should allow admin to delete product" do
       product = FactoryBot.create(:product)
-      delete :destroy, id: product.id
+      expect {delete :destroy, id: product.id }.to change (Product, :count).by(-1)
       expect(response).to redirect_to products_path
     end
   end
@@ -47,7 +48,7 @@ describe ProductsController, type: :controller do
       sign_in @user
     end
     it "successfully updates a product" do
-      @update = { name:@product.name, image_url:"images.com", id:@product.id, price:@product.price, colour: "brown"}
+      @update = { name:@product.name, image_url:"images.com", id:@product.id, price:@product.price, color: "brown"}
       put :update, params: { id: @product.id, product: @update}
       @product.reload
       expect(@product.colour).to eq "brown"
